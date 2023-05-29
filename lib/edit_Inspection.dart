@@ -9,6 +9,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:multi_select_flutter/dialog/multi_select_dialog_field.dart';
 import 'package:multi_select_flutter/util/multi_select_item.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:toggle_switch/toggle_switch.dart';
 import 'customer_details.dart';
 import 'final_page.dart';
 import 'my_orders.dart';
@@ -568,6 +569,8 @@ class _EditInspectionState extends State<EditInspection> {
   TextEditingController vehicleownerserialctrl = TextEditingController();
   TextEditingController vehicleodometerctrl = TextEditingController();
   TextEditingController vehiclespecialcommentctrl = TextEditingController();
+  var hypo = 1;
+  TextEditingController banknameCtrl = TextEditingController();
 
   // exterooir front side
   String? sFrontBumerImg;
@@ -3856,7 +3859,62 @@ class _EditInspectionState extends State<EditInspection> {
                   ),
                 ),
                 SizedBox(
-                  height: 30,
+                  height: Dim().d20,
+                ),
+                Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text("Hypothecation",style: Sty().largeText.copyWith(fontWeight: FontWeight.w400)),
+                    ToggleSwitch(
+                      minWidth: 90.0,
+                      activeBgColors: [[Colors.green[800]!], [Colors.red[800]!]],
+                      activeFgColor: Colors.white,
+                      inactiveBgColor: Colors.grey,
+                      inactiveFgColor: Colors.white,
+                      initialLabelIndex: hypo,
+                      totalSwitches: 2,
+                      labels: ['Yes', 'No'],
+                      onToggle: (index) {
+                        setState((){
+                          hypo = index as int;
+                        });
+                        print('switched to: $index');
+                      },
+                    ),
+                  ],
+                ),
+                hypo == 1 ? Container() :  SizedBox(
+                  height: Dim().d20,
+                ),
+                hypo == 1 ? Container() :Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text('Bank Name',
+                      style:
+                      Sty().largeText.copyWith(fontWeight: FontWeight.w400)),
+                ),
+                hypo == 1 ? Container() : SizedBox(
+                  height: Dim().d8,
+                ),
+                hypo == 1 ? Container() :TextFormField(
+                  controller: banknameCtrl,
+                  validator: (value) {
+                    if (value!.isEmpty) {
+                      return 'This Field is Required';
+                    }
+                    return null;
+                  },
+                  decoration: InputDecoration(
+                    contentPadding: EdgeInsets.all(8),
+                    // label: Text('Enter Your Number'),
+                    // hintText: "01",
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(Dim().d8),
+                        borderSide:  BorderSide(
+                          color: Color(0xffE4DFDF),
+                        )),
+                  ),
+                ),
+                SizedBox(
+                  height: Dim().d32,
                 ),
                 Row(
                   children: [
@@ -15484,6 +15542,8 @@ class _EditInspectionState extends State<EditInspection> {
       "special_comments": vehiclespecialcommentctrl.text,
       "accidental_summary": sAccedential,
       "flooded_condition": sFlooded,
+      "hypothecation": hypo,
+      "bank_name": banknameCtrl.text,
 
       // Form 5
       "front_view": sFrontViewImg,

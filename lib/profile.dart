@@ -30,9 +30,9 @@ class _ProfileState extends State<Profile> {
   String? email;
   String? mobile;
 
-  final Uri _url = Uri.parse('https://thecarsdoctor.com/privacy');
-  final Uri refund = Uri.parse('https://thecarsdoctor.com/refund');
-  final Uri _urlterms = Uri.parse('https://thecarsdoctor.com/terms');
+  final Uri _url = Uri.parse('https://autoscal.in/privacy');
+  final Uri refund = Uri.parse('https://autoscal.in/refund');
+  final Uri _urlterms = Uri.parse('https://autoscal.in/terms');
   Future<void> _launchUrl(url) async {
     if (!await launchUrl(url)) {
       throw 'Could not launch $_url';

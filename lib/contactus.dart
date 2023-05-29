@@ -23,7 +23,7 @@ class _ContactusState extends State<Contactus> {
           Text('8669665959',style: Sty().mediumBoldText,),
           SizedBox(height: Dim().d12,),
           Text('==Email Id==',style: Sty().mediumBoldText,),
-          Text('contactus@thecarsdoctor.com',style: Sty().mediumBoldText,),
+          Text('contactus@autoscal.in',style: Sty().mediumBoldText,),
           SizedBox(height: Dim().d12,),
           Text('==Address==',style: Sty().mediumBoldText,),
           Padding(

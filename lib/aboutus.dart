@@ -25,7 +25,7 @@ class _AboutusState extends State<Aboutus> {
                 height: Dim().d20,
               ),
               Text(
-                "About The Cars Doctor (TCD)",
+                "About Autoscal",
                 style: Sty().mediumText,
               ),
               Text(

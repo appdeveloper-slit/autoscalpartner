@@ -5,6 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:multi_select_flutter/dialog/multi_select_dialog_field.dart';
 import 'package:multi_select_flutter/util/multi_select_item.dart';
+import 'package:toggle_switch/toggle_switch.dart';
 import 'manage/data.dart';
 import 'manage/static_method.dart';
 import 'my_orders.dart';
@@ -69,10 +70,12 @@ class _InspectionState extends State<Inspection> {
   String? sVehicleMake;
   List<String> vehicleModelList = [];
   String? sVehicleModel;
+  int? hypo;
   TextEditingController vehicleVariantCtrl = TextEditingController();
   TextEditingController mfgctrl = TextEditingController();
   TextEditingController regctrl = TextEditingController();
   TextEditingController taxvalidctrl = TextEditingController();
+  TextEditingController banknameCtrl = TextEditingController();
   List<String> arrayvehiclecolorlist = [
     'Red',
     'Yellow',
@@ -804,6 +807,7 @@ class _InspectionState extends State<Inspection> {
     if (widget.isEdit)
       Future.delayed(Duration.zero, () {
         getData();
+        print(hypo);
       });
     super.initState();
   }
@@ -1971,8 +1975,8 @@ class _InspectionState extends State<Inspection> {
               alignment: Alignment.centerLeft,
               child: Text('Vehicle State',
                   style:
-                      Sty().largeText.copyWith(fontWeight: FontWeight.w400))),
-           SizedBox(
+                  Sty().largeText.copyWith(fontWeight: FontWeight.w400))),
+          SizedBox(
             height: 12,
           ),
           Column(
@@ -1986,16 +1990,16 @@ class _InspectionState extends State<Inspection> {
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     contentPadding:
-                        Sty().TextFormFieldOutlineStyle.contentPadding,
+                    Sty().TextFormFieldOutlineStyle.contentPadding,
                     enabledBorder:
-                        Sty().TextFormFieldOutlineStyle.enabledBorder,
+                    Sty().TextFormFieldOutlineStyle.enabledBorder,
                     focusedBorder:
-                        Sty().TextFormFieldOutlineStyle.focusedBorder,
+                    Sty().TextFormFieldOutlineStyle.focusedBorder,
                     focusedErrorBorder:
-                        Sty().TextFormFieldOutlineStyle.focusedErrorBorder,
+                    Sty().TextFormFieldOutlineStyle.focusedErrorBorder,
                     errorBorder: Sty().TextFormFieldOutlineStyle.errorBorder,
                     disabledBorder:
-                        Sty().TextFormFieldOutlineStyle.disabledBorder,
+                    Sty().TextFormFieldOutlineStyle.disabledBorder,
                   ),
                   isExpanded: true,
                   icon:  Icon(
@@ -2021,16 +2025,16 @@ class _InspectionState extends State<Inspection> {
                   },
                 ),
               ),
-               SizedBox(
+              SizedBox(
                 height: 20,
               ),
               Align(
                 alignment: Alignment.centerLeft,
                 child: Text('Vehicle Number',
                     style:
-                        Sty().largeText.copyWith(fontWeight: FontWeight.w400)),
+                    Sty().largeText.copyWith(fontWeight: FontWeight.w400)),
               ),
-               SizedBox(
+              SizedBox(
                 height: 8,
               ),
               TextFormField(
@@ -2052,7 +2056,7 @@ class _InspectionState extends State<Inspection> {
                       )),
                 ),
               ),
-               SizedBox(
+              SizedBox(
                 height: 20,
               ),
               Align(
@@ -2061,7 +2065,7 @@ class _InspectionState extends State<Inspection> {
                       style: Sty()
                           .largeText
                           .copyWith(fontWeight: FontWeight.w400))),
-               SizedBox(
+              SizedBox(
                 height: 12,
               ),
               DropdownButtonHideUnderline(
@@ -2071,16 +2075,16 @@ class _InspectionState extends State<Inspection> {
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     contentPadding:
-                        Sty().TextFormFieldOutlineStyle.contentPadding,
+                    Sty().TextFormFieldOutlineStyle.contentPadding,
                     enabledBorder:
-                        Sty().TextFormFieldOutlineStyle.enabledBorder,
+                    Sty().TextFormFieldOutlineStyle.enabledBorder,
                     focusedBorder:
-                        Sty().TextFormFieldOutlineStyle.focusedBorder,
+                    Sty().TextFormFieldOutlineStyle.focusedBorder,
                     focusedErrorBorder:
-                        Sty().TextFormFieldOutlineStyle.focusedErrorBorder,
+                    Sty().TextFormFieldOutlineStyle.focusedErrorBorder,
                     errorBorder: Sty().TextFormFieldOutlineStyle.errorBorder,
                     disabledBorder:
-                        Sty().TextFormFieldOutlineStyle.disabledBorder,
+                    Sty().TextFormFieldOutlineStyle.disabledBorder,
                   ),
                   value: sVehicleMake,
                   isExpanded: true,
@@ -2110,7 +2114,7 @@ class _InspectionState extends State<Inspection> {
                   },
                 ),
               ),
-               SizedBox(
+              SizedBox(
                 height: 20,
               ),
               Align(
@@ -2119,7 +2123,7 @@ class _InspectionState extends State<Inspection> {
                       style: Sty()
                           .largeText
                           .copyWith(fontWeight: FontWeight.w400))),
-               SizedBox(
+              SizedBox(
                 height: 12,
               ),
               DropdownButtonHideUnderline(
@@ -2128,16 +2132,16 @@ class _InspectionState extends State<Inspection> {
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     contentPadding:
-                        Sty().TextFormFieldOutlineStyle.contentPadding,
+                    Sty().TextFormFieldOutlineStyle.contentPadding,
                     enabledBorder:
-                        Sty().TextFormFieldOutlineStyle.enabledBorder,
+                    Sty().TextFormFieldOutlineStyle.enabledBorder,
                     focusedBorder:
-                        Sty().TextFormFieldOutlineStyle.focusedBorder,
+                    Sty().TextFormFieldOutlineStyle.focusedBorder,
                     focusedErrorBorder:
-                        Sty().TextFormFieldOutlineStyle.focusedErrorBorder,
+                    Sty().TextFormFieldOutlineStyle.focusedErrorBorder,
                     errorBorder: Sty().TextFormFieldOutlineStyle.errorBorder,
                     disabledBorder:
-                        Sty().TextFormFieldOutlineStyle.disabledBorder,
+                    Sty().TextFormFieldOutlineStyle.disabledBorder,
                   ),
                   hint: Text(sVehicleModel ?? "Select Vehicle Model"),
                   value: sVehicleModel,
@@ -2165,7 +2169,7 @@ class _InspectionState extends State<Inspection> {
                   },
                 ),
               ),
-               SizedBox(
+              SizedBox(
                 height: 20,
               ),
               Align(
@@ -2174,7 +2178,7 @@ class _InspectionState extends State<Inspection> {
                       style: Sty()
                           .largeText
                           .copyWith(fontWeight: FontWeight.w400))),
-               SizedBox(
+              SizedBox(
                 height: 12,
               ),
               TextFormField(
@@ -2196,7 +2200,7 @@ class _InspectionState extends State<Inspection> {
                       )),
                 ),
               ),
-               SizedBox(
+              SizedBox(
                 height: 20,
               ),
               Align(
@@ -2205,7 +2209,7 @@ class _InspectionState extends State<Inspection> {
                       style: Sty()
                           .largeText
                           .copyWith(fontWeight: FontWeight.w400))),
-               SizedBox(height: 16),
+              SizedBox(height: 16),
               TextFormField(
                 readOnly: true,
                 onTap: () {
@@ -2234,7 +2238,7 @@ class _InspectionState extends State<Inspection> {
                       )),
                 ),
               ),
-               SizedBox(
+              SizedBox(
                 height: 20,
               ),
               Align(
@@ -2243,7 +2247,7 @@ class _InspectionState extends State<Inspection> {
                       style: Sty()
                           .largeText
                           .copyWith(fontWeight: FontWeight.w400))),
-               SizedBox(height: 16),
+              SizedBox(height: 16),
               TextFormField(
                 readOnly: true,
                 onTap: () {
@@ -2273,7 +2277,7 @@ class _InspectionState extends State<Inspection> {
                       )),
                 ),
               ),
-               SizedBox(
+              SizedBox(
                 height: 20,
               ),
               Align(
@@ -2282,7 +2286,7 @@ class _InspectionState extends State<Inspection> {
                       style: Sty()
                           .largeText
                           .copyWith(fontWeight: FontWeight.w400))),
-               SizedBox(height: 16),
+              SizedBox(height: 16),
               TextFormField(
                 readOnly: true,
                 onTap: () {
@@ -2312,7 +2316,7 @@ class _InspectionState extends State<Inspection> {
                       )),
                 ),
               ),
-               SizedBox(
+              SizedBox(
                 height: 20,
               ),
               Align(
@@ -2321,7 +2325,7 @@ class _InspectionState extends State<Inspection> {
                       style: Sty()
                           .largeText
                           .copyWith(fontWeight: FontWeight.w400))),
-               SizedBox(
+              SizedBox(
                 height: 12,
               ),
               DropdownButtonHideUnderline(
@@ -2330,16 +2334,16 @@ class _InspectionState extends State<Inspection> {
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     contentPadding:
-                        Sty().TextFormFieldOutlineStyle.contentPadding,
+                    Sty().TextFormFieldOutlineStyle.contentPadding,
                     enabledBorder:
-                        Sty().TextFormFieldOutlineStyle.enabledBorder,
+                    Sty().TextFormFieldOutlineStyle.enabledBorder,
                     focusedBorder:
-                        Sty().TextFormFieldOutlineStyle.focusedBorder,
+                    Sty().TextFormFieldOutlineStyle.focusedBorder,
                     focusedErrorBorder:
-                        Sty().TextFormFieldOutlineStyle.focusedErrorBorder,
+                    Sty().TextFormFieldOutlineStyle.focusedErrorBorder,
                     errorBorder: Sty().TextFormFieldOutlineStyle.errorBorder,
                     disabledBorder:
-                        Sty().TextFormFieldOutlineStyle.disabledBorder,
+                    Sty().TextFormFieldOutlineStyle.disabledBorder,
                   ),
                   hint: Text(arrayvehiclecolorvalue ?? "Select Vehicle Colour"),
                   value: arrayvehiclecolorvalue,
@@ -2367,16 +2371,16 @@ class _InspectionState extends State<Inspection> {
                   },
                 ),
               ),
-               SizedBox(
+              SizedBox(
                 height: 20,
               ),
               Align(
                 alignment: Alignment.centerLeft,
                 child: Text('Engine Cubic Capacity',
                     style:
-                        Sty().largeText.copyWith(fontWeight: FontWeight.w400)),
+                    Sty().largeText.copyWith(fontWeight: FontWeight.w400)),
               ),
-               SizedBox(
+              SizedBox(
                 height: 8,
               ),
               TextFormField(
@@ -2399,7 +2403,7 @@ class _InspectionState extends State<Inspection> {
                       )),
                 ),
               ),
-               SizedBox(
+              SizedBox(
                 height: 20,
               ),
               Align(
@@ -2408,7 +2412,7 @@ class _InspectionState extends State<Inspection> {
                       style: Sty()
                           .largeText
                           .copyWith(fontWeight: FontWeight.w400))),
-               SizedBox(
+              SizedBox(
                 height: 12,
               ),
               DropdownButtonHideUnderline(
@@ -2418,16 +2422,16 @@ class _InspectionState extends State<Inspection> {
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     contentPadding:
-                        Sty().TextFormFieldOutlineStyle.contentPadding,
+                    Sty().TextFormFieldOutlineStyle.contentPadding,
                     enabledBorder:
-                        Sty().TextFormFieldOutlineStyle.enabledBorder,
+                    Sty().TextFormFieldOutlineStyle.enabledBorder,
                     focusedBorder:
-                        Sty().TextFormFieldOutlineStyle.focusedBorder,
+                    Sty().TextFormFieldOutlineStyle.focusedBorder,
                     focusedErrorBorder:
-                        Sty().TextFormFieldOutlineStyle.focusedErrorBorder,
+                    Sty().TextFormFieldOutlineStyle.focusedErrorBorder,
                     errorBorder: Sty().TextFormFieldOutlineStyle.errorBorder,
                     disabledBorder:
-                        Sty().TextFormFieldOutlineStyle.disabledBorder,
+                    Sty().TextFormFieldOutlineStyle.disabledBorder,
                   ),
                   value: arrayfuelvalue,
                   isExpanded: true,
@@ -2454,16 +2458,16 @@ class _InspectionState extends State<Inspection> {
                   },
                 ),
               ),
-               SizedBox(
+              SizedBox(
                 height: 20,
               ),
               Align(
                 alignment: Alignment.centerLeft,
                 child: Text('Owner Serial No',
                     style:
-                        Sty().largeText.copyWith(fontWeight: FontWeight.w400)),
+                    Sty().largeText.copyWith(fontWeight: FontWeight.w400)),
               ),
-               SizedBox(
+              SizedBox(
                 height: 8,
               ),
               TextFormField(
@@ -2486,16 +2490,16 @@ class _InspectionState extends State<Inspection> {
                       )),
                 ),
               ),
-               SizedBox(
+              SizedBox(
                 height: 20,
               ),
               Align(
                 alignment: Alignment.centerLeft,
                 child: Text('Odometer Reading',
                     style:
-                        Sty().largeText.copyWith(fontWeight: FontWeight.w400)),
+                    Sty().largeText.copyWith(fontWeight: FontWeight.w400)),
               ),
-               SizedBox(
+              SizedBox(
                 height: 8,
               ),
               TextFormField(
@@ -2518,16 +2522,16 @@ class _InspectionState extends State<Inspection> {
                       )),
                 ),
               ),
-               SizedBox(
+              SizedBox(
                 height: 20,
               ),
               Align(
                 alignment: Alignment.centerLeft,
                 child: Text('Accedential Summary',
                     style:
-                        Sty().largeText.copyWith(fontWeight: FontWeight.w400)),
+                    Sty().largeText.copyWith(fontWeight: FontWeight.w400)),
               ),
-               SizedBox(
+              SizedBox(
                 height: 8,
               ),
               Row(
@@ -2543,7 +2547,7 @@ class _InspectionState extends State<Inspection> {
                           });
                         },
                       ),
-                       Text(
+                      Text(
                         'Yes',
                         style: TextStyle(
                           fontSize: 14,
@@ -2568,7 +2572,7 @@ class _InspectionState extends State<Inspection> {
                           });
                         },
                       ),
-                       Text(
+                      Text(
                         'No',
                         style: TextStyle(
                           fontSize: 14,
@@ -2581,16 +2585,16 @@ class _InspectionState extends State<Inspection> {
                   ),
                 ],
               ),
-               SizedBox(
+              SizedBox(
                 height: 20,
               ),
               Align(
                 alignment: Alignment.centerLeft,
                 child: Text('Flooded Condition',
                     style:
-                        Sty().largeText.copyWith(fontWeight: FontWeight.w400)),
+                    Sty().largeText.copyWith(fontWeight: FontWeight.w400)),
               ),
-               SizedBox(
+              SizedBox(
                 height: 8,
               ),
               Row(
@@ -2606,7 +2610,7 @@ class _InspectionState extends State<Inspection> {
                           });
                         },
                       ),
-                       Text(
+                      Text(
                         'Yes',
                         style: TextStyle(
                           fontSize: 14,
@@ -2631,7 +2635,7 @@ class _InspectionState extends State<Inspection> {
                           });
                         },
                       ),
-                       Text(
+                      Text(
                         'No',
                         style: TextStyle(
                           fontSize: 14,
@@ -2644,19 +2648,19 @@ class _InspectionState extends State<Inspection> {
                   ),
                 ],
               ),
-               SizedBox(
+              SizedBox(
                 height: 20,
               ),
-               SizedBox(
+              SizedBox(
                 height: 20,
               ),
               Align(
                 alignment: Alignment.centerLeft,
                 child: Text('Special Comments',
                     style:
-                        Sty().largeText.copyWith(fontWeight: FontWeight.w400)),
+                    Sty().largeText.copyWith(fontWeight: FontWeight.w400)),
               ),
-               SizedBox(
+              SizedBox(
                 height: 8,
               ),
               TextFormField(
@@ -2679,8 +2683,63 @@ class _InspectionState extends State<Inspection> {
                       )),
                 ),
               ),
-               SizedBox(
-                height: 30,
+              SizedBox(
+                height: Dim().d20,
+              ),
+              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text("Hypothecation",style: Sty().largeText.copyWith(fontWeight: FontWeight.w400)),
+                  ToggleSwitch(
+                    minWidth: 90.0,
+                    activeBgColors: [[Colors.green[800]!], [Colors.red[800]!]],
+                    activeFgColor: Colors.white,
+                    inactiveBgColor: Colors.grey,
+                    inactiveFgColor: Colors.white,
+                    initialLabelIndex: hypo ?? 1,
+                    totalSwitches: 2,
+                    labels: ['Yes', 'No'],
+                    onToggle: (index) {
+                      setState((){
+                        hypo = int.parse(index.toString());
+                      });
+                      print('switched to: $index');
+                    },
+                  ),
+                ],
+              ),
+              hypo == 1 ? Container() :  SizedBox(
+                height: Dim().d20,
+              ),
+              hypo == 1 ? Container() :Align(
+                alignment: Alignment.centerLeft,
+                child: Text('Bank Name',
+                    style:
+                    Sty().largeText.copyWith(fontWeight: FontWeight.w400)),
+              ),
+              hypo == 1 ? Container() : SizedBox(
+                height: Dim().d8,
+              ),
+              hypo == 1 ? Container() :TextFormField(
+                controller: banknameCtrl,
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return 'This Field is Required';
+                  }
+                  return null;
+                },
+                decoration: InputDecoration(
+                  contentPadding: EdgeInsets.all(8),
+                  // label: Text('Enter Your Number'),
+                  // hintText: "01",
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(Dim().d8),
+                      borderSide:  BorderSide(
+                        color: Color(0xffE4DFDF),
+                      )),
+                ),
+              ),
+              SizedBox(
+                height: Dim().d32,
               ),
               Row(
                 children: [
@@ -13827,6 +13886,9 @@ class _InspectionState extends State<Inspection> {
           TextEditingController(text: form4['odometer_reading']);
       vehiclespecialcommentctrl =
           TextEditingController(text: form4['special_comments']);
+      hypo = int.parse(form4['hypothecation'].toString());
+      print('${hypo}dsvgggwg');
+      banknameCtrl = TextEditingController(text: form4['bank_name']);
       sAccedential = form4['accidental_summary'];
       sFlooded = form4['flooded_condition'];
       arrayfuelvalue = form4['fuel_type'];
@@ -14004,7 +14066,8 @@ class _InspectionState extends State<Inspection> {
       "special_comments": vehiclespecialcommentctrl.text,
       "accidental_summary": sAccedential,
       "flooded_condition": sFlooded,
-
+      "hypothecation": hypo,
+      "bank_name": banknameCtrl.text,
       // Form 5
       "front_view": sFrontViewImg,
       "front_glass": sFrontGlassImg,

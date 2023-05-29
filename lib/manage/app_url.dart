@@ -1,8 +1,8 @@
 class AppUrl {
-  static String mainUrl = "https://thecarsdoctor.com/api/";
-  static String policyUrl = "https://thecarsdoctor.com/privacy.php";
-  static String refundPolicyUrl = "https://thecarsdoctor.com/refundpolicy.php";
-  static String termsUrl = "https://thecarsdoctor.com/terms.php";
+  static String mainUrl = "https://autoscal.in/api/";
+  static String policyUrl = "https://autoscal.in/privacy.php";
+  static String refundPolicyUrl = "https://autoscal.in/refundpolicy.php";
+  static String termsUrl = "https://autoscal.in/terms.php";
 }
 
 String sendOTPUrl(){
