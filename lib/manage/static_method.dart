@@ -43,36 +43,40 @@ void load(BuildContext context) {
       context: context,
       builder: (context) {
         return Center(
-          child: Container(
-              decoration: BoxDecoration(
-                  border: Border.all(width: 0.5, color: Colors.grey),
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(10)),
-              padding: EdgeInsets.all(30),
-              child: Container(
-                height: Dim().d60,
-                width: Dim().d100,
-                child: GradientProgressIndicator(
-                  radius: 30,
-                  duration: 1,
-                  strokeWidth: 8.0,
-                  gradientStops: const [
-                    0.2,
-                    100.0,
-                  ],
-                  gradientColors: [
-                    Color(0xffED4120),
-                    Color(0xffE48260),
-                  ],
-                  child: Text(''),
-                ),
-              )
-              // CircularProgressIndicator(
-              //     valueColor: ,
-              //     color: Colors.black,
-              //     strokeWidth: 8.0,
-              //   ),
-              ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Container(
+                  decoration: BoxDecoration(
+                      border: Border.all(width: 0.5, color: Colors.grey),
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10)),
+                  padding: EdgeInsets.all(30),
+                  child: Container(
+                    width: Dim().d100,
+                    child: GradientProgressIndicator(
+                      radius: 30,
+                      duration: 1,
+                      strokeWidth: 8.0,
+                      gradientStops: const [
+                        0.2,
+                        100.0,
+                      ],
+                      gradientColors: [
+                        Color(0xffED4120),
+                        Color(0xffE48260),
+                      ],
+                      child: Text(''),
+                    ),
+                  )
+                  // CircularProgressIndicator(
+                  //     valueColor: ,
+                  //     color: Colors.black,
+                  //     strokeWidth: 8.0,
+                  //   ),
+                  ),
+            ],
+          ),
         );
       });
 }

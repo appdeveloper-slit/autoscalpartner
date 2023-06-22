@@ -303,76 +303,83 @@ class _MyOrderState extends State<MyOrder> {
         child: Column(
           children: [
             Row(
-              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                InkWell(
-                  onTap: () {
-                    // STM().redirect2page(ctx, ExteriorBackSide());
-                    setState(() {
-                      selected = 1;
-                      print("set 1");
-                    });
-                  },
-                  child: Container(
-                    padding: EdgeInsets.symmetric(
-                        vertical: Dim().d16, horizontal: Dim().d20),
-                    decoration: BoxDecoration(
-                      border: Border.all(color: Color(0xffE88B6B)),
-                      gradient: selected == 1
-                          ? Sty().linearGradient
-                          : LinearGradient(
-                              colors: [Colors.white, Colors.white]),
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(4),
-                          bottomLeft: Radius.circular(4)),
-                    ),
-                    child: Text(
-                      'Ongoing Lead',
-                      style: Sty().mediumText.copyWith(
-                          color:
-                              selected == 1 ? Clr().white : Color(0xffE88B6B),
-                          fontSize: 16,
-                          fontWeight: FontWeight.w400),
+                Expanded(
+                  child: InkWell(
+                    onTap: () {
+                      // STM().redirect2page(ctx, ExteriorBackSide());
+                      setState(() {
+                        selected = 1;
+                        print("set 1");
+                      });
+                    },
+                    child: Container(
+                      padding: EdgeInsets.symmetric(
+                          vertical: Dim().d14, ),
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Color(0xffE88B6B)),
+                        gradient: selected == 1
+                            ? Sty().linearGradient
+                            : LinearGradient(
+                                colors: [Colors.white, Colors.white]),
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(4),
+                            bottomLeft: Radius.circular(4)),
+                      ),
+                      child: Center(
+                        child: Text(
+                          'Ongoing Lead',
+                          style: Sty().mediumText.copyWith(
+                              color:
+                                  selected == 1 ? Clr().white : Color(0xffE88B6B),
+                              fontSize: 16,
+                              fontWeight: FontWeight.w400),
+                        ),
+                      ),
                     ),
                   ),
                 ),
-                InkWell(
-                  onTap: () {
-                    // STM().redirect2page(ctx, Interior());
-                    setState(() {
-                      selected = 2;
-                      print("set 2");
-                    });
-                  },
-                  child: Container(
-                    padding: EdgeInsets.symmetric(
-                        vertical: Dim().d16, horizontal: Dim().d20),
-                    decoration: BoxDecoration(
-                      border: Border.all(color: Color(0xffE88B6B)),
-                      gradient: selected == 2
-                          ? Sty().linearGradient
-                          : LinearGradient(
-                              colors: [Colors.white, Colors.white]),
-                      borderRadius: BorderRadius.only(
-                          topRight: Radius.circular(4),
-                          bottomRight: Radius.circular(4)),
-                    ),
-
-                    child: Text(
-                      'Completed Lead',
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500,
-                        color: selected == 2 ? Clr().white : Color(0xffE88B6B),
+                Expanded(
+                  child: InkWell(
+                    onTap: () {
+                      // STM().redirect2page(ctx, Interior());
+                      setState(() {
+                        selected = 2;
+                        print("set 2");
+                      });
+                    },
+                    child: Container(
+                      padding: EdgeInsets.symmetric(
+                          vertical: Dim().d14),
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Color(0xffE88B6B)),
+                        gradient: selected == 2
+                            ? Sty().linearGradient
+                            : LinearGradient(
+                                colors: [Colors.white, Colors.white]),
+                        borderRadius: BorderRadius.only(
+                            topRight: Radius.circular(4),
+                            bottomRight: Radius.circular(4)),
                       ),
+
+                      child: Center(
+                        child: Text(
+                          'Completed Lead',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500,
+                            color: selected == 2 ? Clr().white : Color(0xffE88B6B),
+                          ),
+                        ),
+                      ),
+                      // child: Text(
+                      //   'Completed Order',
+                      //   style: Sty().mediumText.copyWith(
+                      //       color: Clr().white,
+                      //       fontSize: 16,
+                      //       fontWeight: FontWeight.w400),
+                      // ),
                     ),
-                    // child: Text(
-                    //   'Completed Order',
-                    //   style: Sty().mediumText.copyWith(
-                    //       color: Clr().white,
-                    //       fontSize: 16,
-                    //       fontWeight: FontWeight.w400),
-                    // ),
                   ),
                 ),
               ],

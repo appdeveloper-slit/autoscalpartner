@@ -1,19 +1,19 @@
 class Data {
   List<dynamic> summaryList = [
-    {"name": "Customer Details", "page": 1},
-    {"name": "RC & Insurance Details", "page": 2},
-    {"name": "Chassis Details", "page": 3},
-    {"name": "Vehicle Details", "page": 4},
-    {"name": "Upload Photos", "page": 5},
-    {"name": "Exterior Front Side", "page": 6},
-    {"name": "Exterior RHS Side", "page": 7},
-    {"name": "Exterior Back side", "page": 8},
-    {"name": "Exterior LHS Side", "page": 9},
-    {"name": "Interior", "page": 10},
-    {"name": "Test Drive", "page": 11},
-    {"name": "Engine Compartment", "page": 12},
-    {"name": "Special features Photo & Name", "page": 13},
-    {"name": "Any Damages photo & Name", "page": 14}
+    // {"name": "Customer Details", "page": 1},
+    {"name": "RC & Insurance Details", "page": 1},
+    {"name": "Chassis Details", "page": 2},
+    {"name": "Vehicle Details", "page": 3},
+    {"name": "Upload Photos", "page": 4},
+    {"name": "Exterior Front Side", "page": 5},
+    {"name": "Exterior RHS Side", "page": 6},
+    {"name": "Exterior Back side", "page": 7},
+    {"name": "Exterior LHS Side", "page": 8},
+    {"name": "Interior", "page": 9},
+    {"name": "Test Drive", "page": 10},
+    {"name": "Engine Compartment", "page": 11},
+    {"name": "Special features Photo & Name", "page": 12},
+    {"name": "Any Damages photo & Name", "page": 13}
   ];
 
   List<String> rcList = [

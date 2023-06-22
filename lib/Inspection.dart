@@ -870,20 +870,20 @@ class _InspectionState extends State<Inspection> {
             child: Column(
               children: [
                 if (pageNumber == 0) summaryLayout(),
-                if (pageNumber == 1) customerDetailLayout(),
-                if (pageNumber == 2) rcDetailLayout(),
-                if (pageNumber == 3) chassislayout(),
-                if (pageNumber == 4) vehiclelayout(),
-                if (pageNumber == 5) uploadphotolayout(),
-                if (pageNumber == 6) exteriorfronsidelayout(),
-                if (pageNumber == 7) exteriorrhslayout(),
-                if (pageNumber == 8) exteriorbackside(),
-                if (pageNumber == 9) exteriorlhslayout(),
-                if (pageNumber == 10) interiorlayout(),
-                if (pageNumber == 11) testdrivelayout(),
-                if (pageNumber == 12) enginecompartmentlayout(),
-                if (pageNumber == 13) specialfeaturephotonamelayout(),
-                if (pageNumber == 14) anydamagephotolayout(),
+                // if (pageNumber == 1) customerDetailLayout(),
+                if (pageNumber == 1) rcDetailLayout(),
+                if (pageNumber == 2) chassislayout(),
+                if (pageNumber == 3) vehiclelayout(),
+                if (pageNumber == 4) uploadphotolayout(),
+                if (pageNumber == 5) exteriorfronsidelayout(),
+                if (pageNumber == 6) exteriorrhslayout(),
+                if (pageNumber == 7) exteriorbackside(),
+                if (pageNumber == 8) exteriorlhslayout(),
+                if (pageNumber == 9) interiorlayout(),
+                if (pageNumber == 10) testdrivelayout(),
+                if (pageNumber == 11) enginecompartmentlayout(),
+                if (pageNumber == 12) specialfeaturephotonamelayout(),
+                if (pageNumber == 13) anydamagephotolayout(),
               ],
             ),
           ),
@@ -938,230 +938,230 @@ class _InspectionState extends State<Inspection> {
   }
 
   //Customer Detail
-  Widget customerDetailLayout() {
-    return StatefulBuilder(builder: (context, setState1) {
-      return Column(
-        children: [
-          Align(
-            alignment: Alignment.centerLeft,
-            child: Text('Purchase Customer Name',
-                style: Sty().largeText.copyWith(fontWeight: FontWeight.w400)),
-          ),
-           SizedBox(
-            height: 8,
-          ),
-          // textField(CustomerDetailNameCtrl),
-          TextFormField(
-            controller: purchaseNameCtrl,
-            validator: (value) {
-              if (value!.isEmpty) {
-                return 'This Field Is Required';
-              }
-              return null;
-            },
-            decoration:  InputDecoration(
-              contentPadding: EdgeInsets.all(8),
-              // label: Text('Enter Your Number'),
-              // hintText: "Aniket Mahakal",
-              border: OutlineInputBorder(
-                  borderSide: BorderSide(
-                color: Color(0xffE4DFDF),
-              )),
-            ),
-          ),
-           SizedBox(
-            height: 16,
-          ),
-          Align(
-            alignment: Alignment.centerLeft,
-            child: Text('Purchase Customer Number',
-                style: Sty().largeText.copyWith(fontWeight: FontWeight.w400)),
-          ),
-           SizedBox(
-            height: 8,
-          ),
-          TextFormField(
-            controller: purchaseNumberCtrl,
-            keyboardType: TextInputType.number,
-            validator: (value) {
-              if (value!.isEmpty) {
-                return 'This Field Is Required';
-              }
-              if (value.length != 10) {
-                return 'Mobile Number must be of 10 digit';
-              } else {
-                return null;
-              }
-            },
-            maxLength: 10,
-            decoration:  InputDecoration(
-              counterText: '',
-              contentPadding: EdgeInsets.all(8),
-              // label: Text('Enter Your Number'),
-              // hintText: "Aniket Mahakal",
-              border: OutlineInputBorder(
-                  borderSide: BorderSide(
-                color: Color(0xffE4DFDF),
-              )),
-            ),
-          ),
-           SizedBox(
-            height: 16,
-          ),
-          Align(
-            alignment: Alignment.centerLeft,
-            child: Text('Location',
-                style: Sty().largeText.copyWith(fontWeight: FontWeight.w400)),
-          ),
-           SizedBox(
-            height: 8,
-          ),
-          TextFormField(
-            controller: purchaseLocationCtrl,
-            validator: (value) {
-              if (value!.isEmpty) {
-                return 'This Field Is Required';
-              }
-              return null;
-            },
-            decoration:  InputDecoration(
-              contentPadding: EdgeInsets.all(8),
-              // label: Text('Enter Your Number'),
-              // hintText: "Aniket Mahakal",
-              border: OutlineInputBorder(
-                  borderSide: BorderSide(
-                color: Color(0xffE4DFDF),
-              )),
-            ),
-          ),
-           SizedBox(
-            height: 16,
-          ),
-          Align(
-            alignment: Alignment.centerLeft,
-            child: Text('Sell Customer Name',
-                style: Sty().largeText.copyWith(fontWeight: FontWeight.w400)),
-          ),
-           SizedBox(
-            height: 8,
-          ),
-          TextFormField(
-            controller: sellNameCtrl,
-            validator: (value) {
-              if (value!.isEmpty) {
-                return 'This Field Is Required';
-              }
-              return null;
-            },
-            decoration:  InputDecoration(
-              contentPadding: EdgeInsets.all(8),
-              // label: Text('Enter Your Number'),
-              // hintText: "Aniket Mahakal",
-              border: OutlineInputBorder(
-                  borderSide: BorderSide(
-                color: Color(0xffE4DFDF),
-              )),
-            ),
-          ),
-           SizedBox(
-            height: 16,
-          ),
-          Align(
-            alignment: Alignment.centerLeft,
-            child: Text('Sell Customer Number',
-                style: Sty().largeText.copyWith(fontWeight: FontWeight.w400)),
-          ),
-           SizedBox(
-            height: 8,
-          ),
-          TextFormField(
-            controller: sellNumberCtrl,
-            keyboardType: TextInputType.number,
-            validator: (value) {
-              if (value!.isEmpty) {
-                return 'This Field Is Required';
-              }
-              if (value.length != 10) {
-                return 'Mobile Number must be of 10 digit';
-              } else {
-                return null;
-              }
-            },
-            maxLength: 10,
-            decoration:  InputDecoration(
-              counterText: '',
-              contentPadding: EdgeInsets.all(8),
-              border: OutlineInputBorder(
-                  borderSide: BorderSide(
-                color: Color(0xffE4DFDF),
-              )),
-            ),
-          ),
-           SizedBox(
-            height: 16,
-          ),
-          Align(
-            alignment: Alignment.centerLeft,
-            child: Text('Location',
-                style: Sty().largeText.copyWith(fontWeight: FontWeight.w400)),
-          ),
-           SizedBox(
-            height: 8,
-          ),
-          TextFormField(
-            controller: sellLocationCtrl,
-            validator: (value) {
-              if (value!.isEmpty) {
-                return 'This Field Is Required';
-              }
-              return null;
-            },
-            decoration:  InputDecoration(
-              contentPadding: EdgeInsets.all(8),
-              // label: Text('Enter Your Number'),
-              // hintText: "Aniket Mahakal",
-              border: OutlineInputBorder(
-                  borderSide: BorderSide(
-                color: Color(0xffE4DFDF),
-              )),
-            ),
-          ),
-           SizedBox(
-            height: 30,
-          ),
-          Container(
-            padding: EdgeInsets.symmetric(
-                vertical: Dim().d16, horizontal: Dim().d60),
-            decoration: BoxDecoration(
-              gradient:  Sty().linearGradient,
-              borderRadius: BorderRadius.circular(
-                Dim().d4,
-              ),
-            ),
-            // margin: EdgeInsets.all(20),
-            child: InkWell(
-              onTap: () {
-                if (formKey.currentState!.validate()) {
-                  setState(() {
-                    pageNumber++;
-                    isFromSummary = false;
-                    scrollCtrl.jumpTo(scrollCtrl.position.minScrollExtent);
-                  });
-                } //End
-              },
-              child: Text(
-                'Next',
-                style: Sty().mediumText.copyWith(
-                    color: Clr().white,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w400),
-              ),
-            ),
-          ),
-        ],
-      );
-    });
-  }
+  // Widget customerDetailLayout() {
+  //   return StatefulBuilder(builder: (context, setState1) {
+  //     return Column(
+  //       children: [
+  //         Align(
+  //           alignment: Alignment.centerLeft,
+  //           child: Text('Purchase Customer Name',
+  //               style: Sty().largeText.copyWith(fontWeight: FontWeight.w400)),
+  //         ),
+  //          SizedBox(
+  //           height: 8,
+  //         ),
+  //         // textField(CustomerDetailNameCtrl),
+  //         TextFormField(
+  //           controller: purchaseNameCtrl,
+  //           validator: (value) {
+  //             if (value!.isEmpty) {
+  //               return 'This Field Is Required';
+  //             }
+  //             return null;
+  //           },
+  //           decoration:  InputDecoration(
+  //             contentPadding: EdgeInsets.all(8),
+  //             // label: Text('Enter Your Number'),
+  //             // hintText: "Aniket Mahakal",
+  //             border: OutlineInputBorder(
+  //                 borderSide: BorderSide(
+  //               color: Color(0xffE4DFDF),
+  //             )),
+  //           ),
+  //         ),
+  //          SizedBox(
+  //           height: 16,
+  //         ),
+  //         Align(
+  //           alignment: Alignment.centerLeft,
+  //           child: Text('Purchase Customer Number',
+  //               style: Sty().largeText.copyWith(fontWeight: FontWeight.w400)),
+  //         ),
+  //          SizedBox(
+  //           height: 8,
+  //         ),
+  //         TextFormField(
+  //           controller: purchaseNumberCtrl,
+  //           keyboardType: TextInputType.number,
+  //           validator: (value) {
+  //             if (value!.isEmpty) {
+  //               return 'This Field Is Required';
+  //             }
+  //             if (value.length != 10) {
+  //               return 'Mobile Number must be of 10 digit';
+  //             } else {
+  //               return null;
+  //             }
+  //           },
+  //           maxLength: 10,
+  //           decoration:  InputDecoration(
+  //             counterText: '',
+  //             contentPadding: EdgeInsets.all(8),
+  //             // label: Text('Enter Your Number'),
+  //             // hintText: "Aniket Mahakal",
+  //             border: OutlineInputBorder(
+  //                 borderSide: BorderSide(
+  //               color: Color(0xffE4DFDF),
+  //             )),
+  //           ),
+  //         ),
+  //          SizedBox(
+  //           height: 16,
+  //         ),
+  //         Align(
+  //           alignment: Alignment.centerLeft,
+  //           child: Text('Location',
+  //               style: Sty().largeText.copyWith(fontWeight: FontWeight.w400)),
+  //         ),
+  //          SizedBox(
+  //           height: 8,
+  //         ),
+  //         TextFormField(
+  //           controller: purchaseLocationCtrl,
+  //           validator: (value) {
+  //             if (value!.isEmpty) {
+  //               return 'This Field Is Required';
+  //             }
+  //             return null;
+  //           },
+  //           decoration:  InputDecoration(
+  //             contentPadding: EdgeInsets.all(8),
+  //             // label: Text('Enter Your Number'),
+  //             // hintText: "Aniket Mahakal",
+  //             border: OutlineInputBorder(
+  //                 borderSide: BorderSide(
+  //               color: Color(0xffE4DFDF),
+  //             )),
+  //           ),
+  //         ),
+  //          SizedBox(
+  //           height: 16,
+  //         ),
+  //         Align(
+  //           alignment: Alignment.centerLeft,
+  //           child: Text('Sell Customer Name',
+  //               style: Sty().largeText.copyWith(fontWeight: FontWeight.w400)),
+  //         ),
+  //          SizedBox(
+  //           height: 8,
+  //         ),
+  //         TextFormField(
+  //           controller: sellNameCtrl,
+  //           validator: (value) {
+  //             if (value!.isEmpty) {
+  //               return 'This Field Is Required';
+  //             }
+  //             return null;
+  //           },
+  //           decoration:  InputDecoration(
+  //             contentPadding: EdgeInsets.all(8),
+  //             // label: Text('Enter Your Number'),
+  //             // hintText: "Aniket Mahakal",
+  //             border: OutlineInputBorder(
+  //                 borderSide: BorderSide(
+  //               color: Color(0xffE4DFDF),
+  //             )),
+  //           ),
+  //         ),
+  //          SizedBox(
+  //           height: 16,
+  //         ),
+  //         Align(
+  //           alignment: Alignment.centerLeft,
+  //           child: Text('Sell Customer Number',
+  //               style: Sty().largeText.copyWith(fontWeight: FontWeight.w400)),
+  //         ),
+  //          SizedBox(
+  //           height: 8,
+  //         ),
+  //         TextFormField(
+  //           controller: sellNumberCtrl,
+  //           keyboardType: TextInputType.number,
+  //           validator: (value) {
+  //             if (value!.isEmpty) {
+  //               return 'This Field Is Required';
+  //             }
+  //             if (value.length != 10) {
+  //               return 'Mobile Number must be of 10 digit';
+  //             } else {
+  //               return null;
+  //             }
+  //           },
+  //           maxLength: 10,
+  //           decoration:  InputDecoration(
+  //             counterText: '',
+  //             contentPadding: EdgeInsets.all(8),
+  //             border: OutlineInputBorder(
+  //                 borderSide: BorderSide(
+  //               color: Color(0xffE4DFDF),
+  //             )),
+  //           ),
+  //         ),
+  //          SizedBox(
+  //           height: 16,
+  //         ),
+  //         Align(
+  //           alignment: Alignment.centerLeft,
+  //           child: Text('Location',
+  //               style: Sty().largeText.copyWith(fontWeight: FontWeight.w400)),
+  //         ),
+  //          SizedBox(
+  //           height: 8,
+  //         ),
+  //         TextFormField(
+  //           controller: sellLocationCtrl,
+  //           validator: (value) {
+  //             if (value!.isEmpty) {
+  //               return 'This Field Is Required';
+  //             }
+  //             return null;
+  //           },
+  //           decoration:  InputDecoration(
+  //             contentPadding: EdgeInsets.all(8),
+  //             // label: Text('Enter Your Number'),
+  //             // hintText: "Aniket Mahakal",
+  //             border: OutlineInputBorder(
+  //                 borderSide: BorderSide(
+  //               color: Color(0xffE4DFDF),
+  //             )),
+  //           ),
+  //         ),
+  //          SizedBox(
+  //           height: 30,
+  //         ),
+  //         Container(
+  //           padding: EdgeInsets.symmetric(
+  //               vertical: Dim().d16, horizontal: Dim().d60),
+  //           decoration: BoxDecoration(
+  //             gradient:  Sty().linearGradient,
+  //             borderRadius: BorderRadius.circular(
+  //               Dim().d4,
+  //             ),
+  //           ),
+  //           // margin: EdgeInsets.all(20),
+  //           child: InkWell(
+  //             onTap: () {
+  //               if (formKey.currentState!.validate()) {
+  //                 setState(() {
+  //                   pageNumber++;
+  //                   isFromSummary = false;
+  //                   scrollCtrl.jumpTo(scrollCtrl.position.minScrollExtent);
+  //                 });
+  //               } //End
+  //             },
+  //             child: Text(
+  //               'Next',
+  //               style: Sty().mediumText.copyWith(
+  //                   color: Clr().white,
+  //                   fontSize: 16,
+  //                   fontWeight: FontWeight.w400),
+  //             ),
+  //           ),
+  //         ),
+  //       ],
+  //     );
+  //   });
+  // }
 
   //RC Detail
   Widget rcDetailLayout() {
@@ -2146,11 +2146,11 @@ class _InspectionState extends State<Inspection> {
                   hint: Text(sVehicleModel ?? "Select Vehicle Model"),
                   value: sVehicleModel,
                   isExpanded: true,
-                  icon:  Icon(
+                  icon: Icon(
                     Icons.keyboard_arrow_down,
                     size: 28,
                   ),
-                  style:  TextStyle(color: Color(0xff000000)),
+                  style: TextStyle(color: Color(0xff000000)),
                   items: vehicleModelList.map((String string) {
                     return DropdownMenuItem<String>(
                       value: string,
@@ -3218,12 +3218,16 @@ class _InspectionState extends State<Inspection> {
                   SizedBox(
                     width: 10,
                   ),
-                  Text(
-                    sFrontrhstyreImg != null
-                        ? 'Image Selected'
-                        : 'Upload Front Rhs tyre Photo',
-                    style: Sty().mediumText.copyWith(
-                      color: Color(0xffE88B6B),
+                  SizedBox(
+                    width: Dim().d220,
+                    child: Text(
+                      sFrontrhstyreImg != null
+                          ? 'Image Selected'
+                          : 'Upload Front Rhs tyre Photo',
+                      style: Sty().mediumText.copyWith(
+                        color: Color(0xffE88B6B),
+                        overflow: TextOverflow.ellipsis,
+                      ),
                     ),
                   ),
                 ],
@@ -3286,12 +3290,16 @@ class _InspectionState extends State<Inspection> {
                   SizedBox(
                     width: 10,
                   ),
-                  Text(
-                    sRhssideviewImg != null
-                        ? 'Image Selected'
-                        : 'Upload Rhs Side View Photo',
-                    style: Sty().mediumText.copyWith(
-                        color: Color(0xffE88B6B)
+                  SizedBox(
+                    width: Dim().d220,
+                    child: Text(
+                      sRhssideviewImg != null
+                          ? 'Image Selected'
+                          : 'Upload Rhs Side View Photo',
+                      style: Sty().mediumText.copyWith(
+                          color: Color(0xffE88B6B),
+                          overflow: TextOverflow.ellipsis,
+                      ),
                     ),
                   ),
                 ],
@@ -3354,12 +3362,16 @@ class _InspectionState extends State<Inspection> {
                   SizedBox(
                     width: 10,
                   ),
-                  Text(
-                    sRhssideinteriImg != null
-                        ? 'Image Selected'
-                        : 'Upload Rhs Side Interior Photo',
-                    style: Sty().mediumText.copyWith(
-                      color: Color(0xffE88B6B),
+                  SizedBox(
+                    width: Dim().d220,
+                    child: Text(
+                      sRhssideinteriImg != null
+                          ? 'Image Selected'
+                          : 'Upload Rhs Side Interior Photo',
+                      style: Sty().mediumText.copyWith(
+                        color: Color(0xffE88B6B),
+                        overflow: TextOverflow.ellipsis,
+                      ),
                     ),
                   ),
                 ],
@@ -3422,12 +3434,16 @@ class _InspectionState extends State<Inspection> {
                   SizedBox(
                     width: 10,
                   ),
-                  Text(
-                    sRearrhstyreImg != null
-                        ? 'Image Selected'
-                        : 'Upload Rear Rhs Tyre Photo',
-                    style: Sty().mediumText.copyWith(
-                      color: Color(0xffE88B6B),
+                  SizedBox(
+                    width: Dim().d220,
+                    child: Text(
+                      sRearrhstyreImg != null
+                          ? 'Image Selected'
+                          : 'Upload Rear Rhs Tyre Photo',
+                      style: Sty().mediumText.copyWith(
+                        color: Color(0xffE88B6B),
+                        overflow: TextOverflow.ellipsis,
+                      ),
                     ),
                   ),
                 ],
@@ -3558,12 +3574,16 @@ class _InspectionState extends State<Inspection> {
                   SizedBox(
                     width: 10,
                   ),
-                  Text(
-                    sDickydooropenImg != null
-                        ? 'Image Selected'
-                        : 'Upload Dicky Door Open Photo',
-                    style: Sty().mediumText.copyWith(
-                      color: Color(0xffE88B6B),
+                  SizedBox(
+                    width: Dim().d220,
+                    child: Text(
+                      sDickydooropenImg != null
+                          ? 'Image Selected'
+                          : 'Upload Dicky Door Open Photo',
+                      style: Sty().mediumText.copyWith(
+                        color: Color(0xffE88B6B),
+                        overflow: TextOverflow.ellipsis,
+                      ),
                     ),
                   ),
                 ],
@@ -3762,12 +3782,16 @@ class _InspectionState extends State<Inspection> {
                   SizedBox(
                     width: 10,
                   ),
-                  Text(
-                    sSparewheelImg != null
-                        ? 'Image Selected'
-                        : 'Upload Spare Wheel tyre Photo',
-                    style: Sty().mediumText.copyWith(
-                      color: Color(0xffE88B6B),
+                  SizedBox(
+                    width: Dim().d220,
+                    child: Text(
+                      sSparewheelImg != null
+                          ? 'Image Selected'
+                          : 'Upload Spare Wheel tyre Photo',
+                      style: Sty().mediumText.copyWith(
+                        color: Color(0xffE88B6B),
+                        overflow: TextOverflow.ellipsis,
+                      ),
                     ),
                   ),
                 ],
@@ -3830,12 +3854,16 @@ class _InspectionState extends State<Inspection> {
                   SizedBox(
                     width: 10,
                   ),
-                  Text(
-                    sLhssidetriImg != null
-                        ? 'Image Selected'
-                        : 'Upload LHS Side Triangle Photo',
-                    style: Sty().mediumText.copyWith(
-                      color: Color(0xffE88B6B),
+                  SizedBox(
+                    width: Dim().d220,
+                    child: Text(
+                      sLhssidetriImg != null
+                          ? 'Image Selected'
+                          : 'Upload LHS Side Triangle Photo',
+                      style: Sty().mediumText.copyWith(
+                        color: Color(0xffE88B6B),
+                        overflow: TextOverflow.ellipsis,
+                      ),
                     ),
                   ),
                 ],
@@ -3898,12 +3926,16 @@ class _InspectionState extends State<Inspection> {
                   SizedBox(
                     width: 10,
                   ),
-                  Text(
-                    sRearlhstyreImg != null
-                        ? 'Image Selected'
-                        : 'Upload Rear LHS tyre Photo',
-                    style: Sty().mediumText.copyWith(
-                      color: Color(0xffE88B6B),
+                  SizedBox(
+                    width: Dim().d220,
+                    child: Text(
+                      sRearlhstyreImg != null
+                          ? 'Image Selected'
+                          : 'Upload Rear LHS tyre Photo',
+                      style: Sty().mediumText.copyWith(
+                        color: Color(0xffE88B6B),
+                        overflow: TextOverflow.ellipsis,
+                      ),
                     ),
                   ),
                 ],
@@ -3966,12 +3998,16 @@ class _InspectionState extends State<Inspection> {
                   SizedBox(
                     width: 10,
                   ),
-                  Text(
-                    sLhssideviewImg != null
-                        ? 'Image Selected'
-                        : 'Upload LHS Side View Photo',
-                    style: Sty().mediumText.copyWith(
-                      color: Color(0xffE88B6B),
+                  SizedBox(
+                    width: Dim().d220,
+                    child: Text(
+                      sLhssideviewImg != null
+                          ? 'Image Selected'
+                          : 'Upload LHS Side View Photo',
+                      style: Sty().mediumText.copyWith(
+                        color: Color(0xffE88B6B),
+                        overflow: TextOverflow.ellipsis,
+                      ),
                     ),
                   ),
                 ],
@@ -4102,12 +4138,16 @@ class _InspectionState extends State<Inspection> {
                   SizedBox(
                     width: 10,
                   ),
-                  Text(
-                    sFrontlhstyreImg != null
-                        ? 'Image Selected'
-                        : 'Upload Front LHS tyre Photo',
-                    style: Sty().mediumText.copyWith(
-                      color: Color(0xffE88B6B),
+                  SizedBox(
+                    width: Dim().d220,
+                    child: Text(
+                      sFrontlhstyreImg != null
+                          ? 'Image Selected'
+                          : 'Upload Front LHS tyre Photo',
+                      style: Sty().mediumText.copyWith(
+                        color: Color(0xffE88B6B),
+                        overflow: TextOverflow.ellipsis,
+                      ),
                     ),
                   ),
                 ],
@@ -4170,12 +4210,17 @@ class _InspectionState extends State<Inspection> {
                   SizedBox(
                     width: 10,
                   ),
-                  Text(
-                    sDashboardviewImg != null
-                        ? 'Image Selected'
-                        : 'Upload Dashboard View Photo',
-                    style: Sty().mediumText.copyWith(
-                      color: Color(0xffE88B6B),
+                  SizedBox(
+                    width: Dim().d220,
+                    child: Text(
+                      sDashboardviewImg != null
+                          ? 'Image Selected'
+                          : 'Upload Dashboard View Photo',
+                      style: Sty().mediumText.copyWith(
+                        color: Color(0xffE88B6B),
+                        overflow: TextOverflow.ellipsis,
+                      ),
+
                     ),
                   ),
                 ],
@@ -13457,7 +13502,7 @@ class _InspectionState extends State<Inspection> {
             ],
           ),
           SizedBox(
-            height: 50,
+            height: Dim().d52,
           ),
           Row(
             children: [

@@ -36,7 +36,7 @@ class _AboutusState extends State<Aboutus> {
                 height: Dim().d20,
               ),
               Text(
-                "A comprehensive used car evaluation package, to help determine the quality of the car before you invest. With TCD, get the speed of automation and the assurance of physical inspection. Our qualified engineers take care to thoroughly inspect the vehicle across a comprehensive checklist and provide a detailed evaluation report, including vehicle & documents details with images and chassis imprint along with refurbishment cost.",
+                "A comprehensive used car evaluation package, to help determine the quality of the car before you invest. With Autoscal, get the speed of automation and the assurance of physical inspection. Our qualified engineers take care to thoroughly inspect the vehicle across a comprehensive checklist and provide a detailed evaluation report, including vehicle & documents details with images and chassis imprint along with refurbishment cost.",
                 style: Sty().mediumText,
               ),
               SizedBox(

@@ -17,14 +17,7 @@ PreferredSizeWidget toolbar1Layout(title, ctx) {
           fontSize: 20,
           fontWeight: FontWeight.w500,
           foreground: Paint()
-            ..shader = LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment(0.3, 12),
-              colors: <Color>[
-                Color(0xff34135B),
-                Color(0xffA9163A),
-              ],
-            ).createShader(Rect.fromLTWH(0.0, 35.0, 200.0, 70.0))),
+                ..shader = Sty().linearGradient.createShader(Rect.fromLTWH(0.0, 35.0, 200.0, 70.0))),
     ),
     leading: Padding(
       padding: EdgeInsets.all(

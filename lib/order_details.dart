@@ -434,39 +434,40 @@ class _OrderDetailState extends State<OrderDetail> {
                               )
                             : Container(),
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            Padding(
-                              padding: EdgeInsets.symmetric(
-                                  vertical: Dim().d20, horizontal: Dim().d8),
-                              child: Text(
-                                'Report Status : ${resultData['document_status']}',
-                                style: Sty().mediumText.copyWith(
-                                      fontWeight: FontWeight.bold,
-                                      color: resultData['document_status'] ==
-                                              'Ongoing'
-                                          ? Clr().ongoingcolor
-                                          : resultData['document_status'] ==
-                                                  'Under Review'
-                                              ? Clr().ongoingcolor
-                                              : resultData['document_status'] ==
-                                                      'Pending'
-                                                  ? Clr().pendingcolor
-                                                  : resultData[
-                                                              'document_status'] ==
-                                                          'Rejected'
-                                                      ? Clr().pendingcolor
-                                                      : resultData[
-                                                                  'document_status'] ==
-                                                              'Completed'
-                                                          ? Clr().completedcolor
-                                                          : resultData[
-                                                                      'document_status'] ==
-                                                                  'Under Review'
-                                                              ? Clr()
-                                                                  .ongoingcolor
-                                                              : Clr().black,
-                                    ),
+                            Expanded(
+                              child: Padding(
+                                padding: EdgeInsets.symmetric(
+                                    vertical: Dim().d20, horizontal: Dim().d8),
+                                child: Text(
+                                  'Report Status : ${resultData['document_status']}',
+                                  style: Sty().mediumText.copyWith(
+                                        fontWeight: FontWeight.bold,
+                                        color: resultData['document_status'] ==
+                                                'Ongoing'
+                                            ? Clr().ongoingcolor
+                                            : resultData['document_status'] ==
+                                                    'Under Review'
+                                                ? Clr().ongoingcolor
+                                                : resultData['document_status'] ==
+                                                        'Pending'
+                                                    ? Clr().pendingcolor
+                                                    : resultData[
+                                                                'document_status'] ==
+                                                            'Rejected'
+                                                        ? Clr().pendingcolor
+                                                        : resultData[
+                                                                    'document_status'] ==
+                                                                'Completed'
+                                                            ? Clr().completedcolor
+                                                            : resultData[
+                                                                        'document_status'] ==
+                                                                    'Under Review'
+                                                                ? Clr()
+                                                                    .ongoingcolor
+                                                                : Clr().black,
+                                      ),
+                                ),
                               ),
                             ),
                             InkWell(

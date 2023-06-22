@@ -1285,9 +1285,11 @@ class _EditInspectionState extends State<EditInspection> {
         title: Text(
           pageNumber == 0
               ? 'Inspection'
-              : pageNumber == 1
-                  ? 'Customer Details'
-                  : pageNumber == 2
+              :
+          // pageNumber == 1
+          //         ? 'Customer Details'
+          //         :
+          pageNumber == 2
                       ? 'Rc and Insurance'
                       : pageNumber == 3
                           ? 'Chassis Details'
@@ -1348,7 +1350,7 @@ class _EditInspectionState extends State<EditInspection> {
           child: Column(
             children: [
               if (pageNumber == 0) summaryLayout(),
-              if (pageNumber == 1) customerDetailLayout(),
+              // if (pageNumber == 1) customerDetailLayout(),
               if (pageNumber == 2) rcDetailLayout(),
               if (pageNumber == 3) chassislayout(),
               if (pageNumber == 4) vehiclelayout(),
